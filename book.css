@@ -24,7 +24,7 @@ body {
     position: relative;
     display: flex;
     margin: auto;
-    width: 40cqmin;
+    width: 40vmin;
     pointer-events: none;
     transform-style: preserve-3d;
     transition: translate 1s;
@@ -39,7 +39,7 @@ body {
     flex: none;
     display: flex;
     width: 100%;
-    font-size: 2cqmin;
+    font-size: 2vmin;
     /*1* allow pointer events on pages */
     pointer-events: all;
     user-select: none;
@@ -49,7 +49,7 @@ body {
         transform 1s,
         rotate 1s ease-in calc((min(var(--i), var(--c)) - max(var(--i), var(--c))) * 50ms);
     translate: calc(var(--i) * -100%) 0px 0px;
-    transform: translateZ(calc((var(--c) - var(--i) - 0.5) * calc(var(--thickness) * .23cqmin)));
+    transform: translateZ(calc((var(--c) - var(--i) - 0.5) * calc(var(--thickness) * .23vmin)));
     rotate: 0 1 0 calc(clamp(0, var(--c) - var(--i), 1) * -180deg);
 }
 
