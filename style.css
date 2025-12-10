@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #87CEEB;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%);
+    z-index: 0;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: #4CAF50;
+    border-top: 10px solid #388E3C;
+    z-index: 10;
+}
+
+/* Objek Pemandangan */
+.scenery-obj {
+    position: absolute;
+    pointer-events: none;
+    will-change: transform;
+    /* PENTING UNTUK PERFORMA */
+}
+
+/* POHON */
+.tree {
+    bottom: 18%;
+    z-index: 5;
+    transform-origin: bottom center;
+}
+
+.trunk {
+    width: 20px;
+    height: 80px;
+    background: #795548;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+.leaves {
+    width: 120px;
+    height: 120px;
+    background: #2E7D32;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: inset 10px 10px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* RUMPUT */
+.grass {
+    bottom: 19%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 40px solid #66BB6A;
+    z-index: 6;
+}
+
+/* AWAN */
+.cloud {
+    background: white;
+    border-radius: 50px;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.cloud::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 20%;
+    width: 60%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+}
+
+/* LAYANGAN */
+.kite-wrapper {
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    z-index: 50;
+    cursor: none;
+    text-decoration: none;
+}
+
+.kite-shape {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FF5252, #D32F2F);
+    clip-path: polygon(50% 0%, 100% 35%, 50% 100%, 0% 35%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.kite-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.kite-tail {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tail-bit {
+    width: 12px;
+    height: 12px;
+    background: #FFC107;
+    border-radius: 50%;
+    margin: 4px auto;
+}
+
+/* KARAKTER ANAK */
+.kid {
+    position: absolute;
+    width: 60px;
+    height: 120px;
+    bottom: 15%;
+    left: 20%;
+    z-index: 20;
+}
+
+.head {
+    width: 35px;
+    height: 35px;
+    background: #FFCC80;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 12px;
+    z-index: 5;
+}
+
+.hat {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 45px;
+    height: 15px;
+    background: #D32F2F;
+    border-radius: 20px 20px 0 0;
+}
+
+.torso {
+    width: 28px;
+    height: 45px;
+    background: #1976D2;
+    position: absolute;
+    top: 30px;
+    left: 16px;
+    border-radius: 5px;
+    z-index: 4;
+}
+
+.backpack {
+    width: 25px;
+    height: 35px;
+    background: #FFA000;
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    border-radius: 8px;
+}
+
+.arm,
+.leg {
+    position: absolute;
+    transform-origin: top center;
+    border-radius: 10px;
+}
+
+.arm {
+    width: 10px;
+    height: 35px;
+    background: #FFCC80;
+    top: 35px;
+    left: 25px;
+    z-index: 6;
+}
+
+.arm::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: #1976D2;
+}
+
+.leg {
+    width: 12px;
+    height: 45px;
+    background: #37474F;
+    top: 70px;
+    left: 24px;
+    z-index: 3;
+}
+
+.ui-layer {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    pointer-events: none;
+}
+
+.info-card {
+    background: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

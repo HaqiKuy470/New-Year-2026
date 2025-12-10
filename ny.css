@@ -1,0 +1,255 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #111;
+    color: white;
+    overflow-x: hidden;
+    /* Hilangkan scroll horizontal */
+}
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    z-index: 100;
+    mix-blend-mode: difference;
+    /* Agar terlihat di bg putih/hitam */
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* PANELS (Setiap Layar) */
+.panel {
+    width: 100%;
+    height: 100vh;
+    /* Full layar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* FONT STYLES */
+h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 8rem;
+    /* Font Raksasa */
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    /* Outline text style */
+    line-height: 1;
+}
+
+/* SECTION 1: INTRO */
+.intro {
+    background-color: #0a0a0a;
+}
+
+.year-old {
+    color: #ff4757;
+    /* Merah untuk tahun lama */
+    -webkit-text-stroke: 0;
+}
+
+/* Scroll Indicator Animation */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 4px;
+    height: 10px;
+    background: white;
+    margin: 10px auto;
+    border-radius: 2px;
+    animation: scrollDrop 1.5s infinite;
+}
+
+@keyframes scrollDrop {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+/* SECTION 2: TRANSITION */
+.transition-section {
+    background-color: #ffffff;
+    /* Background putih kontras */
+    color: #111;
+}
+
+.message {
+    color: #111;
+    -webkit-text-stroke: 0;
+    font-size: 5rem;
+    opacity: 0;
+    /* Hidden by default, animated by GSAP */
+    transform: translateY(50px);
+}
+
+/* Dekorasi Bulat */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    z-index: -1;
+}
+
+.c1 {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -100px;
+}
+
+.c2 {
+    width: 500px;
+    height: 500px;
+    bottom: -200px;
+    right: -200px;
+}
+
+
+/* SECTION 3: FINAL */
+.final {
+    background: radial-gradient(circle at center, #2c3e50, #000000);
+}
+
+.year-new {
+    color: #2ed573;
+    /* Hijau neon */
+    -webkit-text-stroke: 0;
+    text-shadow: 0 0 50px rgba(46, 213, 115, 0.5);
+    scale: 0.5;
+    /* Mulai dari kecil */
+    opacity: 0;
+}
+
+/* Kembang Api Sederhana (CSS Only) */
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: transparent;
+    box-shadow:
+        0 0 0 0px #ff0000,
+        0 0 0 0px #00ff00,
+        0 0 0 0px #0000ff;
+    border-radius: 50%;
+    animation: fireworkPop 2s infinite ease-out;
+}
+
+@keyframes fireworkPop {
+    0% {
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0);
+    }
+
+    50% {
+        box-shadow:
+            -20px -20px 0 5px #ff4757,
+            20px -20px 0 5px #2ed573,
+            -20px 20px 0 5px #3742fa,
+            20px 20px 0 5px #ffa502;
+        opacity: 1;
+    }
+
+    100% {
+        box-shadow:
+            -40px -40px 0 0px rgba(255, 255, 255, 0),
+            40px -40px 0 0px rgba(255, 255, 255, 0),
+            -40px 40px 0 0px rgba(255, 255, 255, 0),
+            40px 40px 0 0px rgba(255, 255, 255, 0);
+        opacity: 0;
+    }
+}
+
+/* --- TAMBAHAN UNTUK NAMA HAQIKUY --- */
+
+/* Wrapper agar posisi panah bisa diatur relatif terhadap teks */
+.name-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    /* Jarak dari angka 2026 */
+}
+
+/* Styling Teks Haqikuy (Glow Effect) */
+.name-badge {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    background: rgba(46, 213, 115, 0.1);
+    /* Background hijau transparan */
+    padding: 8px 25px;
+    border-radius: 50px;
+    /* Membuat sudut bulat */
+    border: 2px solid #2ed573;
+    /* Garis tepi hijau neon */
+    box-shadow: 0 0 20px rgba(46, 213, 115, 0.6);
+    /* Efek bersinar */
+    text-transform: lowercase;
+    /* Agar tulisan tetap kecil seperti request */
+    letter-spacing: 1px;
+}
+
+/* Styling Panah */
+.arrow-indicator {
+    font-size: 2.5rem;
+    color: #2ed573;
+    /* Hijau neon sama dengan tahun */
+    font-weight: bold;
+    position: absolute;
+    top: -50px;
+    /* Posisi panah di atas teks */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Agar pas di tengah */
+    animation: bounceArrow 1s infinite alternate;
+    /* Animasi gerak */
+}
+
+/* Animasi Bouncing Panah */
+@keyframes bounceArrow {
+    from {
+        transform: translate(-50%, 0);
+    }
+
+    to {
+        transform: translate(-50%, -15px);
+        /* Bergerak naik */
+    }
+}
